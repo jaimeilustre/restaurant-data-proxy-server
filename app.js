@@ -1,13 +1,18 @@
 const express = require('express')
 const axios = require('axios')
-
+const cors = require("cors")
 const app = express()
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
-  
+const FRONTEND_URL = process.env.ORIGIN || "http://localhost:5173"
+
+app.use(
+    cors({
+        origin: [FRONTEND_URL]
+    })
+)
+
+const PORT = process.env.PORT || 5005
+ 
 // GET route to get restaurants from a specific postcode
 app.get('/restaurants/:postcode', (req, res, next) => {
     const {postcode} = req.params
@@ -21,6 +26,6 @@ app.get('/restaurants/:postcode', (req, res, next) => {
     })
 })
 
-app.listen(5001, () => {
-    console.log("Proxy server is running on port 5001!")
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}!`)
 })
