@@ -5,6 +5,9 @@
 - Framework: Express/Node.js
 - Code editor: Visual Studio Code
 
+## Link to the Frontend
+https://github.com/jaimeilustre/restaurant-data
+
 ## Steps to build and compile
 
 1. Navigate to the directory you want to save your app
