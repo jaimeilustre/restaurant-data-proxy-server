@@ -49,7 +49,7 @@ https://github.com/jaimeilustre/restaurant-data
     ```
 7. Once everything is working, proceed with the app with all the requirements you need to satisfy. In this case, we need to bypass the CORS restrictions from the public API.
 
-8. Create a `.env` file in the root folder add the following environment variables:
+8. Create a `.env` file in the root folder and add the following environment variables with your local port and origin:
     ``` bash
     // .env
     // ...
@@ -145,7 +145,7 @@ https://github.com/jaimeilustre/restaurant-data
     npm install
     code .
     ```
-3. Create a `.env` file in the root folder add the following environment variables:
+3. Create a `.env` file in the root folder and add the following environment variables with your local port and origin:
     ``` bash
     // .env
     // ...
