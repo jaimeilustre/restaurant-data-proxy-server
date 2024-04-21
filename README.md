@@ -8,8 +8,27 @@
 ## Link to the Frontend
 https://github.com/jaimeilustre/restaurant-data
 
-## Steps to build and compile the server
+## Steps to run the app locally
+1. Fork this repo and clone it.
+2. Navigate to this directory and run the following code:
+    ``` bash
+    npm install
+    code .
+    ```
+3. Create a `.env` file in the root folder and add the following environment variables with your local port and origin:
+    ``` bash
+    // .env
+    // ...
 
+    PORT=5005
+    ORIGIN=http://localhost:5173
+    ```
+4. Once done, run the app locally with the following code:
+    ``` bash
+    npm run dev
+    ```
+
+## Steps to build and compile the server
 1. Navigate to the directory you want to save your app.
 2. Initialize NPM with the following code:
     ``` bash
@@ -24,7 +43,7 @@ https://github.com/jaimeilustre/restaurant-data
 4. Open the app with your editor and create an `app.js` file in the root folder and run this code:
     ``` bash
     // app.js
-    //...
+    // ...
 
     const express = require('express')
     const axios = require('axios')
@@ -34,7 +53,7 @@ https://github.com/jaimeilustre/restaurant-data
 5. Create the first route to test your server. An example could be:
     ``` bash
     // app.js
-    //...
+    // ...
     
     app.get("/", (req, res) => {
         res.send("Hello world!")
@@ -43,7 +62,7 @@ https://github.com/jaimeilustre/restaurant-data
 6. Start the server with your port of choice:
     ``` bash
     // app.js
-    //...
+    // ...
     
     app.listen(5005, () => console.log("Server is listening on port 5005!"))
     ```
@@ -111,7 +130,7 @@ https://github.com/jaimeilustre/restaurant-data
 11. To set up CORS, run the following code:
     ``` bash
     // app.js
-    //...
+    // ...
     
     app.use(
     cors({
@@ -126,7 +145,7 @@ https://github.com/jaimeilustre/restaurant-data
 12. Create a `GET` route to handle requests to the path `"/restaurants/:postcode"` with postcode as a URL parameter. This can be done like this:
     ``` bash
     // app.js
-    //...
+    // ...
     
     app.get('/restaurants/:postcode', (req, res) => {
         const {postcode} = req.params
@@ -145,26 +164,6 @@ https://github.com/jaimeilustre/restaurant-data
     - Using `req.params`, the postcode is extracted from the URL parameters.
     - The API URL is then constructed to query restaurant data based on the postcode using the Just Eat API
     - Using axios, it then makes a `GET` request. If successful, the client then receives a JSON response from the API. If not susccessful, it logs the error and sends a 500 status with a JSON response indicating an error.
-
-## Steps to run the app locally
-1. Fork this repo and clone it.
-2. Navigate to this directory and run the following code:
-    ``` bash
-    npm install
-    code .
-    ```
-3. Create a `.env` file in the root folder and add the following environment variables with your local port and origin:
-    ``` bash
-    // .env
-    // ...
-
-    PORT=5005
-    ORIGIN=http://localhost:5173
-    ```
-4. Once done, run the app locally with the following code:
-    ``` bash
-    npm run dev
-    ```
 
 ## Improvements for future development
 - Add a custom error handling middleware to tailor error responses based on the specific needs of the app.
