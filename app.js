@@ -14,10 +14,11 @@ app.use(
 const PORT = process.env.PORT || 5005
  
 // GET route to get restaurants from a specific postcode
-app.get('/restaurants/:postcode', (req, res, next) => {
+app.get('/restaurants/:postcode', (req, res) => {
     const {postcode} = req.params
+    const apiUrl = "https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/"
 
-    axios.get(`https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${postcode}`)
+    axios.get(`${apiUrl}${postcode}`)
     .then(response => 
         res.json(response.data))
     .catch(err => {
