@@ -21,7 +21,7 @@ https://github.com/jaimeilustre/restaurant-data
     npm install cors
     npm install axios
     ```
-4. Open the app with your editor and create an 'app.js' file in the root folder and run this code:
+4. Open the app with your editor and create an `app.js` file in the root folder and run this code:
     ``` bash
     // app.js
     //...
@@ -49,7 +49,7 @@ https://github.com/jaimeilustre/restaurant-data
     ```
 7. Once everything is working, proceed with the app with all the requirements you need to satisfy. In this case, we need to bypass the CORS restrictions from the public API.
 
-8. Create a .env file in the root folder add the following environment variables:
+8. Create a `.env` file in the root folder add the following environment variables:
     ``` bash
     // .env
     // ...
@@ -58,7 +58,7 @@ https://github.com/jaimeilustre/restaurant-data
     ORIGIN=http://localhost:5173
     ```
 
-9. Once this .env file is created, to access these environment variables, run the following code:
+9. Once this `.env` file is created, to access these environment variables, run the following code:
     ``` bash
     // app.js
     //...
@@ -70,7 +70,7 @@ https://github.com/jaimeilustre/restaurant-data
     - Using `process.env` allows access to these variables
     - Using the `||` logical operator, it allows us to set a default value if there is an issue accessing the environment variables
 
-10. This next step is IMPORTANT. By default, a .gitignore file is not created when setting up this Express server. This .gitignore allows us to tell Git which files to ignore when committing. In our case, we need to ignore the 'node_modules' and the '.env'. This can be done by creating a .gitignore file in the root folder with the following code:
+10. This next step is IMPORTANT. By default, a `.gitignore` file is not created when setting up this Express server. This `.gitignore` allows us to tell Git which files to ignore when committing. In our case, we need to ignore the `node_modules` and the `.env`. This can be done by creating a `.gitignore` file in the root folder with the following code:
     ``` bash
     // .gitignore
     // ...
@@ -115,7 +115,7 @@ https://github.com/jaimeilustre/restaurant-data
     - This specifies the requests from specific origins, which in this case would be our `FRONTEND_URL` variable that we created in the previous steps. This means that only the application hosted at this `FRONTEND_URL` is allowed access.
     - Alternatively, by leaving CORS blank, this would mean that any frontend domain can have access, which is not ideal for security reasons.
 
-12. Create a GET route to handle requests to the path "/restaurants/:postcode" with postcode as a URL parameter. This can be done like this:
+12. Create a `GET` route to handle requests to the path `"/restaurants/:postcode"` with postcode as a URL parameter. This can be done like this:
     ``` bash
     // app.js
     //...
@@ -136,7 +136,7 @@ https://github.com/jaimeilustre/restaurant-data
     The following is achieved with this piece of code:
     - Using `req.params`, the postcode is extracted from the URL parameters.
     - The API URL is then constructed to query restaurant data based on the postcode using the Just Eat API
-    - Using axios, it then makes a GET request. If successful, the client then receives a JSON response from the API. If not susccessful, it logs the error and sends a 500 status with a JSON response indicating an error.
+    - Using axios, it then makes a `GET` request. If successful, the client then receives a JSON response from the API. If not susccessful, it logs the error and sends a 500 status with a JSON response indicating an error.
 
 ## Steps to run the app locally
 1. Fork this repo and clone it.
@@ -145,11 +145,11 @@ https://github.com/jaimeilustre/restaurant-data
     npm install
     code .
     ```
-3. Create a .env file in the root folder add the following environment variables:
+3. Create a `.env` file in the root folder add the following environment variables:
     ``` bash
     // .env
     // ...
-    
+
     PORT=5005
     ORIGIN=http://localhost:5173
     ```
