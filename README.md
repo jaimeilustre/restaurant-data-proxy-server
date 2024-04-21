@@ -2,7 +2,7 @@
 
 - Platform: Web application
 - Language: Javascript
-- Framework: Express/Node.js
+- Framework: Express
 - Code editor: Visual Studio Code
 
 ## Link to the Frontend
