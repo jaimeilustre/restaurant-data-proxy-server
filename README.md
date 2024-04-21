@@ -61,7 +61,7 @@ https://github.com/jaimeilustre/restaurant-data
 9. Once this `.env` file is created, to access these environment variables, run the following code:
     ``` bash
     // app.js
-    //...
+    // ...
     
     const FRONTEND_URL = process.env.ORIGIN || "http://localhost:5173"
     const PORT = process.env.PORT || 5005
@@ -69,6 +69,14 @@ https://github.com/jaimeilustre/restaurant-data
     This does the following:
     - Using `process.env` allows access to these variables
     - Using the `||` logical operator, it allows us to set a default value if there is an issue accessing the environment variables
+    
+    With the new PORT variable, replace port `5005` with this in the `app.listen()`. It should look like this:
+    ``` bash
+    // app.js
+    // ...
+
+    app.listen(PORT, () => console.log(`Server is listening on port ${PORT}!`))
+    ```
 
 10. This next step is IMPORTANT. By default, a `.gitignore` file is not created when setting up this Express server. This `.gitignore` allows us to tell Git which files to ignore when committing. In our case, we need to ignore the `node_modules` and the `.env`. This can be done by creating a `.gitignore` file in the root folder with the following code:
     ``` bash
