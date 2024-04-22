@@ -25,7 +25,7 @@ https://github.com/jaimeilustre/restaurant-data
     ```
 4. Once done, run the app locally with the following code:
     ``` bash
-    npm run dev
+    nodemon app.js
     ```
 
 ## Steps to build and compile the server
